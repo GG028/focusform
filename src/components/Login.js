@@ -1,45 +1,44 @@
 import React, { Component } from 'react';
 import css from '../css/css.css';
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
 
 const style = {
 	height: '80px',
 	'verticalAlign': 'middle',
 	'textAlign': 'center',
-	'lineHeight': '20px'
-  }
+	'lineHeight': '20px',
+}
 
 class Login extends Component {
-	
+
 	renderLogin() {
 		return (
-			<div className="column twelve wide" >
-				<i className="user circle icon" size='large'></i>
-				<div className="content">
-					Log-in to your account
-      					</div>
-				<form action="https://s.codepen.io/voltron2112/debug/PqrEPM?" method="get" className="ui large form">
-					<div className="ui stacked secondary  segment">
-						<div className="field">
-							<div className="ui left icon input">
-								<i className="user icon"></i>
-								<input type="text" name="email" placeholder="E-mail address" />
-							</div>
-						</div>
-						<div className="field">
-							<div className="ui left icon input">
-								<i className="lock icon"></i>
-								<input type="password" name="password" placeholder="Password" />
-							</div>
-						</div>
-						<div className="ui fluid large teal submit button">Login</div>
-					</div>
+			<Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+				<Grid.Column style={{ maxWidth: 450 }}>
+					<Header as='h2' color='teal' textAlign='center'>
+						<Image src='../logo.png' /> Log-in to your account
+      </Header>
+					<Form size='large'>
+						<Segment stacked>
+							<Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail address' />
+							<Form.Input
+								fluid
+								icon='lock'
+								iconPosition='left'
+								placeholder='Password'
+								type='password'
+							/>
 
-					<div className="ui error message"></div>
-
-				</form>
-
-			
-			</div>
+							<Button color='teal' fluid size='large'>
+								Login
+          </Button>
+						</Segment>
+					</Form>
+					<Message>
+						New to us? Sign Up
+					</Message>
+				</Grid.Column>
+			</Grid>
 
 		);
 	}
